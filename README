@@ -1,0 +1,22 @@
+Croogo Site template plugin
+------------------------------
+Template plugin for custom site tweaks.
+
+Use this template when a site requires some custom coding that doesn't fit in with a theme.
+This template shouldn't be used for such things as a gallery, video etc... It's purely for small bespoke tweaks.
+
+An example would be using a custom field for the page title which is included in the site component.
+
+
+How to use
+------------------------------
+- Log in to admin panel
+- Go to Extensions > Plugins page
+- Upload the zip file (available here)
+- Click on tick/cross icon of 'Site' for activating or deactivating the plugin
+
+
+Notes
+------------------------------
+- Might be best to use a downloaded version that doesn't have git repo files
+- Modify all the files if needed for bespoke site tweaks
