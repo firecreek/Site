@@ -10,7 +10,7 @@
    * @license  http://www.opensource.org/licenses/mit-license.php The MIT License
    * @link     http://www.firecreek.co.uk
    */
-  class SiteController extends SitemapAppController
+  class SiteController extends SiteAppController
   {
   
     /**

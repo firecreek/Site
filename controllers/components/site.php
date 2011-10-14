@@ -16,6 +16,11 @@
      * Controller
      */
     public $controller = null;
+    
+    /**
+     * Components
+     */
+    public $components = array('Croogo');
   
   
     /**
@@ -38,7 +43,39 @@
      */
     public function beforeRender(&$controller)
     {
+      //Theme view directory, forced
+      App::build(array(
+        'views' => array(APP . 'views' . DS . 'themed' . DS . Configure::read('Site.theme') . DS)
+      ));
+      
+      //Helper directory, forced
+      //Fixes custom helper
+      App::build(array(
+        'helpers' => array(APP . 'views' . DS . 'themed' . DS . Configure::read('Site.theme') . DS . 'helpers'. DS)
+      ));
+      
+      //Node title
+      if(isset($controller->viewVars['node']))
+      {
+        $this->_meta($controller);
+      }
     }
+  
+  
+    /**
+     * Meta
+     *
+     * @access private
+     * @return void
+     */
+    private function _meta(&$controller)
+    {
+      if(isset($controller->viewVars['node']['CustomFields']['title']))
+      {
+        $controller->set('title_for_layout',$controller->viewVars['node']['CustomFields']['title']);
+      }
+    }
+    
   
   
     /**
